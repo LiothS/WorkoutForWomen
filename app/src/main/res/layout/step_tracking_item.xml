@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="220dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_height="340dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@color/info_bg"
+        android:gravity="center_horizontal"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:text="Step Tracking"
+            android:id="@+id/tv1"
+            android:layout_alignParentTop="true"
+            android:fontFamily="@font/poppins_bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:layout_below="@id/tv1"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv2"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:text="See more ideas about"
+            android:fontFamily="@font/poppins"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/ln1"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tv2"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:text="0 steps"
+                android:id="@+id/tv_step"
+                android:fontFamily="@font/poppins_bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:text="/today"
+                android:id="@+id/tv_per_day"
+                android:fontFamily="@font/poppins"
+                />
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="wrap_content"
+
+            android:layout_height="120dp"
+            android:paddingLeft="20dp"
+            android:layout_marginLeft="10dp"
+            android:paddingRight="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:id="@+id/step_rv"
+            android:layout_below="@id/ln1"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:background="@drawable/daily_btn_green"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:id="@+id/start_step_btn"
+            android:paddingTop="5dp"
+            android:layout_alignParentBottom="true"
+         android:layout_marginBottom="30dp"
+            android:paddingBottom="5dp"
+            android:layout_centerHorizontal="true"
+            android:drawablePadding="5dp"
+            android:textColor="@color/textColor"
+            android:fontFamily="@font/poppins_bold"
+            android:drawableLeft="@drawable/ic_start_dark"
+            />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -32,16 +33,16 @@ public class NavigateItem extends LinearLayout implements View.OnClickListener {
         this.type=str;
         switch (type){
             case "Home":tv.setText("Home");
-                img.setImageResource(R.drawable.ic_home_black);
+                img.setImageResource(R.drawable.ic_home_outline);
                 break;
             case "Activities":tv.setText("Activities");
-                img.setImageResource(R.drawable.ic_action_name);
+                img.setImageResource(R.drawable.ic_activity_outline);
                 break;
             case "Daily":tv.setText("Daily");
-                img.setImageResource(R.drawable.ic_home_black);
+                img.setImageResource(R.drawable.ic_daily_outline);
                 break;
             case "Setting":tv.setText("Setting");
-                img.setImageResource(R.drawable.ic_home_black);
+                img.setImageResource(R.drawable.ic_settings_2_outline);
                 break;
         }
 
@@ -81,7 +82,7 @@ public class NavigateItem extends LinearLayout implements View.OnClickListener {
         tv.setSingleLine(true);
 
         tv.measure(0,0);
-        measuredTitleWidth=tv.getMeasuredWidth();
+        measuredTitleWidth=tv.getMeasuredWidthAndState();
         linearLayout=v.findViewById(R.id.layout_contain);
         linearLayout.measure(0,0);
         line=v.findViewById(R.id.linear_line);
@@ -109,19 +110,19 @@ public class NavigateItem extends LinearLayout implements View.OnClickListener {
         ValueAnimator animator = ValueAnimator.ofFloat(1f, 0f);
         switch (type){
             case "Home":
-                img.setImageResource(R.drawable.ic_home_black);
+                img.setImageResource(R.drawable.ic_home_outline);
                 break;
             case "Activities":
-                img.setImageResource(R.drawable.ic_action_name);
+                img.setImageResource(R.drawable.ic_activity_outline);
                 break;
             case "Daily":
-                img.setImageResource(R.drawable.ic_daily);
+                img.setImageResource(R.drawable.ic_daily_outline);
                 break;
             case "Setting":
-                img.setImageResource(R.drawable.ic_setting);
+                img.setImageResource(R.drawable.ic_settings_2_outline);
                 break;
         }
-        animator.setDuration(200);
+        animator.setDuration(300);
         linearLayout.setVisibility(VISIBLE);
         isActive=false;
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -133,7 +134,7 @@ public class NavigateItem extends LinearLayout implements View.OnClickListener {
 
 
                 if (value <= 0.0f) {
-                    linearLayout.setVisibility(GONE);
+                    //linearLayout.setVisibility(GONE);
 
                 }
                 //  Toast.makeText(getContext(), ""+measuredTitleWidth, Toast.LENGTH_SHORT).show();
@@ -142,50 +143,104 @@ public class NavigateItem extends LinearLayout implements View.OnClickListener {
             }
         });
         animator.start();
+        lineBoolean=false;
     }
-
-    int measuredTitleWidth;
-    public void activate() {
+    public void activateFirst(){
         if(isActive==true) return;
-        if(type.contains("Activi")||type.contains("Sett")) measuredTitleWidth=200;
-        ValueAnimator animator = ValueAnimator.ofFloat(0f, 1f);
+        if(type.contains("Activi")||type.contains("Sett"))measuredTitleWidth= (int) getResources().getDimension(R.dimen.long_navigate);
+        else measuredTitleWidth= (int) getResources().getDimension(R.dimen.short_navigate);
+
         switch (type){
             case "Home":
-                img.setImageResource(R.drawable.icon_home_active);
+                img.setImageResource(R.drawable.ic_home_outline_active);
                 break;
             case "Activities":
-                img.setImageResource(R.drawable.icon_home_active);
+                img.setImageResource(R.drawable.ic_activity_outline_active);
                 break;
             case "Daily":
-                img.setImageResource(R.drawable.ic_daily_active);
+                img.setImageResource(R.drawable.ic_daily_outline_active);
                 break;
             case "Setting":
-                img.setImageResource(R.drawable.ic_setting_active);
+                img.setImageResource(R.drawable.ic_settings_2_outline_active);
                 break;
         }
-        animator.setDuration(200);
+
         linearLayout.setVisibility(VISIBLE);
+        line.setVisibility(VISIBLE);
+        //Toast.makeText(getContext(), ""+measuredTitleWidth, Toast.LENGTH_SHORT).show();
+
+                tv.setWidth((int) ( measuredTitleWidth*1.5));
+
+                LayoutParams params = (LayoutParams) line.getLayoutParams();
+// Changes the height and width to the specified *pixels*
+
+                params.width= (int) (measuredTitleWidth/3);
+
+                isActive=true;
+
+    }
+    boolean lineBoolean=false;
+    int measuredTitleWidth;
+    public void activate() {
+
+        if(isActive==true) return;
+        if(type.contains("Activi")||type.contains("Sett")) measuredTitleWidth= (int) getResources().getDimension(R.dimen.long_navigate);
+        else measuredTitleWidth= (int) getResources().getDimension(R.dimen.short_navigate);
+        ValueAnimator animator = ValueAnimator.ofFloat(0f, 1.5f);
+        switch (type){
+            case "Home":
+                img.setImageResource(R.drawable.ic_home_outline_active);
+                break;
+            case "Activities":
+                img.setImageResource(R.drawable.ic_activity_outline_active);
+                break;
+            case "Daily":
+                img.setImageResource(R.drawable.ic_daily_outline_active);
+                break;
+            case "Setting":
+                img.setImageResource(R.drawable.ic_settings_2_outline_active);
+                break;
+        }
+        animator.setDuration(300);
+        linearLayout.setVisibility(VISIBLE);
+
         line.setVisibility(VISIBLE);
        //Toast.makeText(getContext(), ""+measuredTitleWidth, Toast.LENGTH_SHORT).show();
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float value = (float) animation.getAnimatedValue();
-               tv.setWidth((int) (measuredTitleWidth * value));
+               tv.setWidth((int) ( measuredTitleWidth* value));
 
                 LayoutParams params = (LayoutParams) line.getLayoutParams();
 // Changes the height and width to the specified *pixels*
 
-                params.width = tv.getWidth()/3;
+
                // Toast.makeText(getContext(), ""+params.width, Toast.LENGTH_SHORT).show();
+                    if(value<=1.0f){
+                    params.width= (int) (tv.getWidth()/3);
+                    line.setLayoutParams(params);}
 
+
+                if(value>1&& !lineBoolean){
+                    if(measuredTitleWidth==getResources().getDimension(R.dimen.short_navigate))
+                    params.width= (int) ((int) (getResources().getDimension(R.dimen.short_navigate)/3));
+                    else   params.width= (int) (getResources().getDimension(R.dimen.long_navigate)/4);
+                    lineBoolean=true;
+                    line.setLayoutParams(params);
+                    Log.d("length",""+params.width);
+                }
                 isActive=true;
-                if(value>1.0f)  line.setLayoutParams(params);
-                //  Toast.makeText(getContext(), ""+measuredTitleWidth, Toast.LENGTH_SHORT).show();
-                //tv.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-
+                if(value>1.5f) {
+                    //tv.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+//                    params.width=measuredTitleWidth/3;
+//                    line.setLayoutParams(params);}}
+                    //  Toast.makeText(getContext(), ""+measuredTitleWidth, Toast.LENGTH_SHORT).show();
+                    //tv.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+                }
             }
         });
         animator.start();
+
     }
 }

@@ -8,4 +8,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="inactive">#D5D6DA</color>
+    <color name="textColor">#3B3E54</color>
+    <color name="darkColor">#3B3E54</color>
+    <color name="active_yellow">#E5D010</color>
+    <color name="active_dark">#27293F</color>
+    <color name="testing_color">#51C4CB</color>
+    <color name="test_red">#D75C5C</color>
+    <color name="testcolor_blue">#555FCC</color>
+    <color name="blue_sky">#4FD4FF</color>
+    <color name="info_bg">#292A33</color>
+    <color name="green_light">#FED47E</color>
 </resources>

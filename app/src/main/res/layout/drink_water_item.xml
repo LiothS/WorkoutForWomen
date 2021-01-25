@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="220dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+
+    android:layout_marginLeft="10dp"
+    android:layout_height="340dp">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/info_bg"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:id="@+id/tv1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:text="Drink Water"
+        android:fontFamily="@font/poppins_bold"
+        />
+    <RelativeLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="150dp"
+        android:id="@+id/progress1"
+        android:layout_below="@id/tv1"
+        android:layout_marginTop="20dp"
+        android:layout_height="150dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10:03"
+            android:id="@+id/drinking_time"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            />
+        <ProgressBar
+            android:id="@+id/drink_water_progress"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/progress_bar_bg"
+            android:background="@drawable/circle_progress_bg"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:max="100"
+            android:progress="40" />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv2"
+        android:layout_below="@id/progress1"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:text="See more ideas about"
+        android:fontFamily="@font/poppins"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/daily_btn"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:id="@+id/star_drink_water_btn"
+        android:paddingTop="5dp"
+        android:layout_marginBottom="30dp"
+        android:paddingBottom="5dp"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_bold"
+        android:drawableLeft="@drawable/ic_start"
+        />
+    
+</RelativeLayout>
+</androidx.cardview.widget.CardView>

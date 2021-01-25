@@ -4,10 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+android:paddingTop="5dp"
     android:background="#fff"
     tools:context=".MainActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_above="@+id/cardview1"
+        android:id="@+id/frame_container"
+        android:layout_height="match_parent"/>
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
+    android:id="@+id/cardview1"
     android:layout_alignParentBottom="true"
     app:cardElevation="20dp"
     android:layout_height="wrap_content">
@@ -16,8 +23,9 @@
         android:orientation="horizontal"
 android:background="@color/white"
         android:gravity="center"
+
         android:layout_alignParentBottom="true"
-        android:padding="5dp"
+        android:padding="10dp"
         android:layout_height="wrap_content">
         <com.example.workoutforwomen.NavigateItem.NavigateItem
             android:layout_weight="1"

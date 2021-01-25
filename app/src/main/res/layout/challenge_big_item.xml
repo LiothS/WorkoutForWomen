@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_gravity="center_horizontal"
+
+    >
+
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="450dp"
+    android:elevation="20dp"
+    android:layout_gravity="center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/challenge_cardview"
+    app:cardCornerRadius="20dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/big_challenge_container"
+        android:background="@color/test_red"
+        android:layout_height="match_parent">
+       <LinearLayout
+           android:layout_width="200dp"
+           android:id="@+id/challenge_img"
+           android:orientation="vertical"
+           android:layout_margin="16dp"
+
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+           android:gravity="center"
+           android:background="@drawable/ic_shield"
+           android:layout_height="200dp"
+          >
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/question_mark"
+               android:textSize="35dp"
+               android:text="\?"
+               android:textStyle="bold"
+                android:textColor="@color/test_red"
+               />
+       </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/big_challenge_lv"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:text="Beginer - 17 mins"
+            android:layout_below="@+id/challenge_img"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="16dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/big_challenge_name"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:text="Training Aim"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_below="@+id/big_challenge_lv"
+            android:layout_marginLeft="16dp"
+
+            />
+        <ImageView
+            android:layout_width="120dp"
+            android:scaleType="fitXY"
+            android:layout_height="80dp"
+            android:visibility="gone"
+            android:layout_below="@+id/big_challenge_name"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_challenge_img"
+            />
+        <TextView
+            android:layout_width="175dp"
+            android:layout_height="44dp"
+            android:id="@+id/big_challenge_lets_go"
+            android:text="Let's go"
+
+            android:paddingLeft="20dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:paddingRight="20dp"
+            android:textColor="@color/textColor"
+            android:background="@drawable/lets_go_btn_bg"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_alignParentBottom="true"
+
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="35dp"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+   <LinearLayout
+       android:layout_below="@id/challenge_cardview"
+       android:layout_width="match_parent"
+
+       android:layout_gravity="center_horizontal"
+       android:orientation="horizontal"
+       android:layout_marginTop="20dp"
+       android:layout_height="wrap_content">
+       <LinearLayout
+           android:layout_width="3dp"
+           android:layout_height="match_parent"
+           android:orientation="horizontal"
+          android:layout_marginRight="10dp"
+           android:layout_marginTop="7dp"
+           android:layout_marginBottom="7dp"
+           android:background="@drawable/challenge_msg_line"
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:visibility="gone"
+
+           android:layout_marginRight="16dp"
+           android:text="One solution is to uses a media query at a certain screen size."
+           android:textColor="@color/textColor"
+           android:textSize="16sp"
+           android:id="@+id/challenge_message"
+           android:fontFamily="@font/poppins"
+           />
+
+   </LinearLayout>
+</RelativeLayout>

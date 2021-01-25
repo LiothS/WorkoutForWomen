@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="183dp"
+
+    android:layout_marginBottom="15dp"
+    android:elevation="0dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:id="@+id/plan_container"
+    android:background="@color/testcolor_blue"
+    android:paddingBottom="20dp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_alignParentStart="true"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/trainning_name"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:text="Training Aim"
+            android:fontFamily="@font/poppins_bold"
+
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/trainning_time"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:text="Beginer - 17 mins"
+
+            android:textStyle="bold"
+
+            />
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:id="@+id/plan_button"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_bookmark_inline_white"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        />
+    <TextView
+        android:layout_width="143dp"
+        android:layout_height="44dp"
+        android:id="@+id/plan_lets_go"
+        android:text="Let's go"
+        android:paddingLeft="20dp"
+    android:textSize="16sp"
+        android:gravity="center"
+        android:paddingRight="20dp"
+        android:textColor="@color/textColor"
+        android:background="@drawable/lets_go_btn_bg"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="10dp"/>
+</RelativeLayout>
+</androidx.cardview.widget.CardView>
