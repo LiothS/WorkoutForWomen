@@ -17,7 +17,7 @@
         android:orientation="vertical"
         android:id="@+id/layout_contain"
         android:gravity="center_vertical"
-        android:layout_marginRight="5dp"
+        android:layout_marginRight="@dimen/default_margin"
         android:layout_height="match_parent">
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -26,12 +26,12 @@
 
             android:paddingBottom="0dp"
             android:id="@+id/tv_navigate"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="@dimen/default_margin"
             android:fontFamily="@font/poppins_bold"
             android:text="Home"
             android:textStyle="bold"
             android:textColor="#27293F"
-            android:layout_marginLeft="2dp"
+            android:layout_marginLeft="@dimen/default_nav_item_badge_padding"
             android:textSize="12sp" />
         <LinearLayout
 
@@ -39,8 +39,8 @@
             android:layout_height="3dp"
             android:background="@drawable/line_border"
             android:layout_marginTop="-2dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="2dp"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:layout_marginLeft="@dimen/default_nav_item_badge_padding"
             android:orientation="horizontal"
             android:layout_width="0dp" />
     </LinearLayout>

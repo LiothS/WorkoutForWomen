@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="32dp"
+        android:layout_height="@dimen/margin_32"
         android:id="@+id/tabbar"
         android:orientation="horizontal"
         android:layout_alignParentTop="true"
@@ -16,7 +16,7 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:textColor="@color/textColor"
-          android:textSize="16sp"
+          android:textSize="@dimen/text_16"
           android:text="Daily"
           android:id="@+id/daily_title"
           android:layout_marginLeft="10dp"
@@ -28,7 +28,7 @@
         android:background="@color/white"
         android:layout_below="@id/tabbar"
         android:id="@+id/break_line"
-        android:layout_height="5dp">
+        android:layout_height="@dimen/default_margin">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,7 +54,7 @@
 
         <androidx.viewpager.widget.ViewPager
             android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_20"
             android:layout_centerHorizontal="true"
             android:overScrollMode="never"
             android:paddingLeft="80px"
@@ -67,9 +67,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/textColor"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_16"
         android:text="Weekly Report"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/margin_20"
         android:id="@+id/weekly"
 
         android:layout_marginLeft="10dp"
@@ -86,7 +86,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
+            android:textSize="@dimen/text_16"
             android:id="@+id/tv1"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
@@ -113,7 +113,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_centerHorizontal="true"
-                    android:layout_height="5dp"
+                    android:layout_height="@dimen/default_margin"
                     android:layout_marginTop="45dp"
                     android:src="@drawable/dotted"
                     android:layerType="software" />
@@ -132,7 +132,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_16"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/white"
                 android:text="30 minute"
@@ -142,12 +142,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="13sp"
+                android:textSize="@dimen/text_13"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/white"
                 android:text="/today"
                 android:id="@+id/tv4"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="@dimen/margin_20"
                 android:fontFamily="@font/poppins"
                 />
         </LinearLayout>

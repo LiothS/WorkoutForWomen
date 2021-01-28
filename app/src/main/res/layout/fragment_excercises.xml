@@ -17,11 +17,11 @@
         android:background="@drawable/total_info_bg"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/margin_20"
         android:layout_below="@+id/break_line"
         android:layout_height="wrap_content">
         <LinearLayout
-            android:layout_width="2dp"
+            android:layout_width="@dimen/default_nav_item_badge_padding"
             android:layout_height="18dp"
             android:background="@drawable/mid_line"
             android:layout_centerInParent="true"
@@ -34,14 +34,14 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:layout_margin="16dp"
+                android:layout_margin="@dimen/margin_16"
                 android:id="@+id/minute_layout"
                 android:layout_height="wrap_content">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Total minute"
-                    android:textSize="13sp"
+                    android:textSize="@dimen/text_13"
                     android:id="@+id/tv_total_min"
                     android:layout_marginBottom="4dp"
                     android:textColor="@color/white"
@@ -51,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:text="9000 minute"
                     android:id="@+id/total_minute"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/text_16"
                     android:textColor="@color/white"
                     />
             </LinearLayout>
@@ -59,7 +59,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:layout_margin="16dp"
+                android:layout_margin="@dimen/margin_16"
                 android:id="@+id/exercise_layout"
                 android:paddingLeft="24dp"
                 android:layout_height="wrap_content">
@@ -67,7 +67,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Total Exercises"
-                    android:textSize="13sp"
+                    android:textSize="@dimen/text_13"
                     android:id="@+id/tv_total_ex"
                     android:layout_marginBottom="4dp"
                     android:textColor="@color/white"
@@ -77,7 +77,7 @@
                     android:layout_height="wrap_content"
                     android:text="99"
                     android:id="@+id/total_exercise"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/text_16"
                     android:textColor="@color/white"
                     />
             </LinearLayout>
@@ -90,10 +90,10 @@
         android:text="Today"
         android:fontFamily="@font/poppins_bold"
         android:textColor="@color/textColor"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_16"
         android:textStyle="bold"
         android:id="@+id/today"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/margin_20"
         android:layout_marginLeft="10dp"
         />
     <androidx.recyclerview.widget.RecyclerView
@@ -110,10 +110,10 @@
         android:text="Yesterday"
         android:fontFamily="@font/poppins_bold"
         android:textColor="@color/textColor"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_16"
         android:textStyle="bold"
         android:id="@+id/yesterday"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_8"
         android:layout_marginLeft="10dp"
         />
     <androidx.recyclerview.widget.RecyclerView

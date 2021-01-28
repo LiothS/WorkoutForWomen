@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,8 @@ import com.example.workoutforwomen.Model.TrainingItem;
 import com.example.workoutforwomen.R;
 
 import java.util.ArrayList;
+
+import static maes.tech.intentanim.CustomIntent.customType;
 
 public class SavedExerciseActivity extends AppCompatActivity {
     ArrayList<TrainingItem> list1;
@@ -34,6 +37,10 @@ public class SavedExerciseActivity extends AppCompatActivity {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
         catch (Exception e){}
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
+        SharedPreferences.Editor editor=pref.edit();
+        editor.putBoolean("reload",true);
+        editor.commit();
         recyclerView=findViewById(R.id.list_exercise_rv);
         backBtn=findViewById(R.id.back_btn);
         BackButtonEvent();
@@ -49,7 +56,15 @@ public class SavedExerciseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+                customType(SavedExerciseActivity.this,"right-to-left");
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+        customType(SavedExerciseActivity.this,"right-to-left");
     }
 }

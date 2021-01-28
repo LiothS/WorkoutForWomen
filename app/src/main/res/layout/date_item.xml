@@ -19,9 +19,9 @@
     android:background="@color/white"
     android:paddingLeft="15dp"
     android:paddingRight="15dp"
-    android:paddingBottom="5dp"
+    android:paddingBottom="@dimen/default_margin"
     android:id="@+id/contain_day_layout"
-    android:paddingTop="5dp"
+    android:paddingTop="@dimen/default_margin"
     android:orientation="vertical"
     android:layout_height="wrap_content">
 
@@ -32,7 +32,7 @@
 
         android:layout_gravity="center_horizontal"
         android:id="@+id/tv_day"
-        android:textSize="13sp"
+        android:textSize="@dimen/text_13"
         android:textColor="@color/textColor"
         />
     <TextView
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:text="4"
         android:id="@+id/tv_day_number"
-        android:textSize="20sp"
+        android:textSize="@dimen/text_20"
         android:textColor="@color/textColor"
         />
     <LinearLayout

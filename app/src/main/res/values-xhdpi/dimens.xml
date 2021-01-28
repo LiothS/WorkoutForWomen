@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_corner_radii">112px</dimen>
+    <dimen name="default_badge_corner_radii">32px</dimen>
+    <dimen name="default_nav_item_padding">24px</dimen>
+    <dimen name="default_nav_item_text_size">28px</dimen>
+    <dimen name="default_nav_item_text_padding">16px</dimen>
+    <dimen name="default_nav_item_title_max_width">160px</dimen>
+    <dimen name="default_icon_size">48px</dimen>
+    <dimen name="default_nav_item_badge_padding">4px</dimen>
+    <dimen name="default_nav_item_badge_text_size">14px</dimen>
+    <dimen name="default_margin">10px</dimen>
+    <dimen name="short_navigate">100px</dimen>
+    <dimen name="long_navigate">200px</dimen>
+    <dimen name="tab_break">40px</dimen>
+    <dimen name="act_line">140px</dimen>
+    <dimen name="full_progress">200px</dimen>
+    <dimen name="big_progress">16px</dimen>
+    <dimen name="text_13">26px</dimen>
+    <dimen name="text_16">32px</dimen>
+    <dimen name="text_20">40px</dimen>
+    <dimen name="text_25">50px</dimen>
+    <dimen name="rest_high">800px</dimen>
+    <dimen name="gif_high">572px</dimen>
+    <dimen name="margin_8">16px</dimen>
+    <dimen name="margin_16">32px</dimen>
+    <dimen name="margin_20">40px</dimen>
+    <dimen name="margin_32">64px</dimen>
+    <dimen name="view_pager_padding">100px</dimen>
+    <dimen name="list_gif_width">262px</dimen>
+    <dimen name="list_gif_height">176px</dimen>
+</resources>

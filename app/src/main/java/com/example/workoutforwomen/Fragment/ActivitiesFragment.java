@@ -1,6 +1,7 @@
 package com.example.workoutforwomen.Fragment;
 
 import android.animation.ValueAnimator;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,12 +22,23 @@ import com.example.workoutforwomen.Model.CustomFragmentPager2;
 import com.example.workoutforwomen.NavigateItem.TabItem;
 import com.example.workoutforwomen.R;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class ActivitiesFragment extends Fragment {
     public ActivitiesFragment() {
     }
     ViewPager viewPager;
     LinearLayout swipe_line;
     TabItem tab1,tab2;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences pref = getContext().getSharedPreferences("MyPref", MODE_PRIVATE);
+        SharedPreferences.Editor editor=pref.edit();
+        editor.putBoolean("reload",false);
+        editor.commit();
+    }
 
     @Nullable
     @Override

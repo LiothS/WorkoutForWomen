@@ -17,7 +17,7 @@
         />
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="@dimen/default_nav_item_badge_padding"
             android:background="@drawable/line_border"
             />
     </LinearLayout>

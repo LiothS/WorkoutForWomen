@@ -1,6 +1,7 @@
 package com.example.workoutforwomen.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,11 +14,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.workoutforwomen.Activity.ExerciseDetailActivity;
+import com.example.workoutforwomen.Activity.MovementListActivity;
+import com.example.workoutforwomen.Activity.ReadyActivity;
 import com.example.workoutforwomen.DataBase.DataManager;
+import com.example.workoutforwomen.Model.MovementItem;
 import com.example.workoutforwomen.Model.TrainingItem;
 import com.example.workoutforwomen.R;
 
 import java.util.ArrayList;
+
+import static maes.tech.intentanim.CustomIntent.customType;
 
 public class LongItemTrainingAdapter extends RecyclerView.Adapter<LongItemTrainingAdapter.ViewHolder> {
     ArrayList<TrainingItem> list;
@@ -71,6 +78,21 @@ public class LongItemTrainingAdapter extends RecyclerView.Adapter<LongItemTraini
             container=itemView.findViewById(R.id.long_container);
             bookMark=itemView.findViewById(R.id.long_exercise_button);
             longImg=itemView.findViewById(R.id.item_long_image);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    DataManager dataManager = DataManager.getInstance(context);
+                    ArrayList<MovementItem> moveList=dataManager.getMovementList(list.get(getAdapterPosition()).getId());
+                    Log.d("sizee",list.get(getAdapterPosition()).getId()+"");
+                    Log.d("sizee",moveList.size()+"");
+                    Intent intent=new Intent(context, MovementListActivity.class);
+                    intent.putExtra("movementList",moveList);
+                    intent.putExtra("movementOrder",1);
+                    intent.putExtra("exercise",list.get(getAdapterPosition()));
+                    context.startActivity(intent);
+                    customType(context,"left-to-right");
+                }
+            });
         }
     }
 }

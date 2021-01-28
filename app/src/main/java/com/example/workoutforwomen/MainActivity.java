@@ -19,7 +19,7 @@ import com.example.workoutforwomen.Fragment.DailyFragment;
 import com.example.workoutforwomen.Fragment.HomeFragment;
 import com.example.workoutforwomen.Fragment.SettingFragment;
 import com.example.workoutforwomen.NavigateItem.NavigateItem;
-
+import static maes.tech.intentanim.CustomIntent.customType;
 public class MainActivity extends AppCompatActivity {
     NavigateItem nav1,nav2,nav3,nav4;
     float screenNav;
@@ -36,8 +36,10 @@ public class MainActivity extends AppCompatActivity {
         }
         catch (Exception e){}
         DisplayMetrics dm = new DisplayMetrics();
+
         getWindowManager().getDefaultDisplay().getMetrics(dm);
       screenNav=dm.widthPixels/dm.densityDpi;
+      Log.d("pixel",""+dm.density);
         nav1=findViewById(R.id.nav1);
 
         nav2=findViewById(R.id.nav2);
@@ -67,7 +69,9 @@ public class MainActivity extends AppCompatActivity {
             paramSmall4.weight= (float) 1;
             nav4.setLayoutParams(paramSmall4);
         }
+
         onNavSelected();
+        Log.d("densit","ss"+dm.widthPixels);
     }
 
     private void onNavSelected() {

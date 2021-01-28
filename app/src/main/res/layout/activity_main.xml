@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:paddingTop="5dp"
+android:paddingTop="@dimen/default_margin"
     android:background="#fff"
     tools:context=".MainActivity">
     <FrameLayout
@@ -16,7 +16,7 @@ android:paddingTop="5dp"
     android:layout_width="match_parent"
     android:id="@+id/cardview1"
     android:layout_alignParentBottom="true"
-    app:cardElevation="20dp"
+    app:cardElevation="@dimen/margin_20"
     android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"

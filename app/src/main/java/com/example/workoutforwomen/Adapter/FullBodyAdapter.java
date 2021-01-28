@@ -14,17 +14,23 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.workoutforwomen.Activity.ExerciseDetailActivity;
+import com.example.workoutforwomen.Activity.MovementListActivity;
+import com.example.workoutforwomen.Activity.ReadyActivity;
 import com.example.workoutforwomen.Activity.SavedExerciseActivity;
 import com.example.workoutforwomen.DataBase.DataManager;
+import com.example.workoutforwomen.Model.MovementItem;
 import com.example.workoutforwomen.Model.TrainingItem;
 import com.example.workoutforwomen.R;
 
 import java.util.ArrayList;
 
+import static maes.tech.intentanim.CustomIntent.customType;
+
 public class FullBodyAdapter extends RecyclerView.Adapter<FullBodyAdapter.ViewHolder> {
     ArrayList<TrainingItem> list;
     Context context;
-
+    DataManager dataManager;
     public FullBodyAdapter(ArrayList<TrainingItem> list, Context context) {
         this.list = list;
         this.context = context;
@@ -91,8 +97,16 @@ public class FullBodyAdapter extends RecyclerView.Adapter<FullBodyAdapter.ViewHo
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent=new Intent(context, SavedExerciseActivity.class);
+                    dataManager=DataManager.getInstance(context);
+                    ArrayList<MovementItem> moveList=dataManager.getMovementList(list.get(getAdapterPosition()).getId());
+                    Log.d("sizee",list.get(getAdapterPosition()).getId()+"");
+                    Log.d("sizee",moveList.size()+"");
+                    Intent intent=new Intent(context, MovementListActivity.class);
+                    intent.putExtra("movementList",moveList);
+                    intent.putExtra("movementOrder",1);
+                    intent.putExtra("exercise",list.get(getAdapterPosition()));
                     context.startActivity(intent);
+                    customType(context,"left-to-right");
                 }
             });
         }

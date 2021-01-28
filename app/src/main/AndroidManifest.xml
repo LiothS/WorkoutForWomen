@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkoutForWomen">
-        <activity android:name=".Activity.SavedExerciseActivity"></activity>
+        <activity android:name=".Activity.HoldBreathActivity"></activity>
+        <activity android:name=".Activity.ResultActivity"></activity>
+        <activity android:name=".Activity.MovementListActivity" />
+        <activity android:name=".Activity.ReadyActivity" />
+        <activity android:name=".Activity.ExerciseDetailActivity" />
+        <activity android:name=".Activity.SavedExerciseActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -2,7 +2,9 @@ package com.example.workoutforwomen.Fragment;
 
 import android.animation.ValueAnimator;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -23,6 +25,9 @@ import com.example.workoutforwomen.Model.CustomFragmentPager;
 import com.example.workoutforwomen.NavigateItem.TabItem;
 import com.example.workoutforwomen.R;
 
+import static android.content.Context.MODE_PRIVATE;
+import static maes.tech.intentanim.CustomIntent.customType;
+
 public class HomeFragment extends Fragment {
     public HomeFragment() {
     }
@@ -30,7 +35,18 @@ public class HomeFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        viewPager.setCurrentItem(0);
+        SharedPreferences pref = getContext().getSharedPreferences("MyPref", MODE_PRIVATE);
+        boolean reload=pref.getBoolean("reload",false);
+      if(reload){
+          SharedPreferences.Editor editor=pref.edit();
+          editor.putBoolean("reload",false);
+          editor.commit();
+          FragmentManager fm = getChildFragmentManager();
+          CustomFragmentPager adapter=new CustomFragmentPager(fm,1);
+          viewPager.setAdapter(adapter);
+          viewPager.setCurrentItem(1);
+      }else viewPager.setCurrentItem(0);
+
     }
     ViewPager viewPager;
     LinearLayout swipe_line;
@@ -49,6 +65,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent=new Intent(getContext(), SavedExerciseActivity.class);
                 startActivity(intent);
+                customType(getContext(),"left-to-right");
             }
         });
         FragmentManager fm = getChildFragmentManager();
@@ -191,4 +208,6 @@ int width=tab2.getWidth();
         });
         animator.start();
     }
+
+
 }

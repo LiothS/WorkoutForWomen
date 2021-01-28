@@ -3,6 +3,7 @@ package com.example.workoutforwomen.Fragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -31,6 +32,7 @@ public class ChallengesFragment extends Fragment {
     ArrayList <ChallengeItem> challengeList;
     ChallengeDetailAdapter adapter;
     ViewPager viewPager;
+    private int dragThreshold = 10,downX = 0, downY = 0;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -40,7 +42,7 @@ public class ChallengesFragment extends Fragment {
        viewPager.setPageMargin(50);
 
         challengeList=new ArrayList<>();
-        challengeList.add(new ChallengeItem("First Item","Level 1","1 One solution is to use a media query at a certain screen size."));
+        challengeList.add(new ChallengeItem("First Item","Level 1","1 One solutionddddddddddddddddddddddddddddddddddddddddddd is to use a media query at a certain screen size."));
         challengeList.add(new ChallengeItem("Second Item","Level 2","Second item message"));
         challengeList.add(new ChallengeItem("Third Item","Level 3","Third item message"));
         challengeList.add(new ChallengeItem("Last Item","Level 4","Last item message"));
@@ -51,7 +53,29 @@ public class ChallengesFragment extends Fragment {
         adapter=new ChallengeDetailAdapter(list,getContext());
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(2);
+        viewPager.setOnTouchListener(new View.OnTouchListener() {
 
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN || event.getAction() == MotionEvent.ACTION_UP){
+                    downX = (int) event.getRawX();
+                    downY = (int) event.getRawY();
+                    return false;
+                }else if(event.getAction() == MotionEvent.ACTION_MOVE){
+                    int distanceX = Math.abs((int) event.getRawX() - downX);
+                    int distanceY = Math.abs((int) event.getRawY() - downY);
+
+
+
+                    if(distanceY > distanceX && distanceY > dragThreshold){
+                        v.getParent().requestDisallowInterceptTouchEvent(false);
+                        return true;
+                    }
+                }
+                v.getParent().requestDisallowInterceptTouchEvent(true);
+                return false;
+            }
+        });
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

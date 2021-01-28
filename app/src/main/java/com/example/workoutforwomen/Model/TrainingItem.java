@@ -1,6 +1,8 @@
 package com.example.workoutforwomen.Model;
 
-public class TrainingItem {
+import java.io.Serializable;
+
+public class TrainingItem implements Serializable {
     public String  Name, Time,level,image;
     public int isSaved,duration;
 

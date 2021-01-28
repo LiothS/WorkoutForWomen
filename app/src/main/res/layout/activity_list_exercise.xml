@@ -10,12 +10,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:id="@+id/list_toolbar"
-        android:layout_height="32dp">
+        android:layout_height="@dimen/margin_32">
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="32dp"
+            android:layout_height="@dimen/margin_32"
             android:id="@+id/back_btn"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="@dimen/margin_8"
             android:src="@drawable/ic_back"
             />
 
@@ -23,10 +23,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/margin_16"
         android:id="@+id/list_exercise_rv"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginLeft="@dimen/margin_8"
+        android:layout_marginRight="@dimen/margin_8"
         />
 
 </LinearLayout>

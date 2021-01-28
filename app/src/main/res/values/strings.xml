@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WorkoutForWomen</string>
+    <string name="ready_to_go">Ready to go</string>
+    <string name="rest">Rest</string>
 </resources>
